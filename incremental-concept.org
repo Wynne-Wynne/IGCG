@@ -1,49 +1,48 @@
 * Concept for incremental game thingy
 
 ** (react) Web Programming considerations
-*** If done on React, will be kinda heavy but easier to make, and there are thingies to make a windows app
-*** Can use localstorage and shit like that to save progress if run from a browser, though will have to create a way to serialize game progress into a password or something like that in order to transfer progress
-*** Running as an electron (or Tauri equivalent) app will enable a unified appearance for elements such as status bars
-*** Will have to consider performance impact if run as a separate app as opposed to a browser window
-*** If made to run properly on a phone as a non-server side app, could be hosted on shithub and people like boytoy could be encouraged to try it on their phone
-**** There's probably no way of running this on a phone unless it's a web app
-*** Would probably be difficult to run on i3 unless the electron app would be super lightweight and versatile enough to fit any tiling window shenanigans
-** How the hell do you get a game clock working in React anyway
-*** You gotta be able to measure time accurately in order to define it manually, though ideally not because cpu owie
+- If done on React, will be kinda heavy but easier to make, and there are thingies to make a windows app
+- Can use localstorage and shit like that to save progress if run from a browser, though will have to create a way to serialize game progress into a password or something like that in order to transfer progress
+- Running as an electron (or Tauri equivalent) app will enable a unified appearance for elements such as status bars
+- Will have to consider performance impact if run as a separate app as opposed to a browser window
+- If made to run properly on a phone as a non-server side app, could be hosted on shithub and people like boytoy could be encouraged to try it on their phone
+   - There's probably no way of running this on a phone unless it's a web app
+- Would probably be difficult to run on i3 unless the electron app would be super lightweight and versatile enough to fit any tiling window shenanigans
+- How the hell do you get a game clock working in React anyway
+- You gotta be able to measure time accurately in order to define it manually, though ideally not because cpu owie
 
-** TODO assuming use of React because it's what's familiar but could be done on something lighter (but still client-side only)
+- TODO assuming use of React because it's what's familiar but could be done on something lighter (but still client-side only)
 
 ** Alternatives to web app
-*** As fun as it would be to run an ncurses version of this game on a terminal, there's too many caveats to consider
-**** Inconsistent terminal sizes [unless you're confortable programming this shit to run on 80x24]
-**** Would necessarily have to figure out a way to do a game clock on a terminal to also ignore key repeat
-**** Would be very painful to get running on windows (Sonya, Habibi, Boombr, Princess etc. shouldn't have to learn how to install ncurses on their windows machine to run it)
-***** Fuck Microsoft forever (on top of everything) for not ever porting ncurses or providing a compatible API
-*** As simple as a java app would be to generate, having to figure out java versions would be painful
-**** Most people already have java installed because of Minecraft at least 
-**** Not available on mobile
+- As fun as it would be to run an ncurses version of this game on a terminal, there's too many caveats to consider
+- Inconsistent terminal sizes [unless you're confortable programming this shit to run on 80x24]
+- Would necessarily have to figure out a way to do a game clock on a terminal to also ignore key repeat
+- Would be very painful to get running on windows (Sonya, Habibi, Boombr, Princess etc. shouldn't have to learn how to install ncurses on their windows machine to run it)
+- Fuck Microsoft forever (on top of everything) for not ever porting ncurses or providing a compatible API
+- As simple as a java app would be to generate, having to figure out java versions would be painful
+- Most people already have java installed because of Minecraft at least 
+- Not available on mobile
 
-*** Biting the bullet and using Flutter might be the way to go, it is /the meta/ after all
-
+- Biting the bullet and using Flutter might be the way to go, it is /the meta/ after all
 
 
 ** So what's this shit about, anyway?
-*** Space-themed game about sending millions and millions to their deaths all entirely for the purpose of unrestrained expansion
-*** Space imperialism weee
-*** Initial premise is tough, how do we justify what we're doing when the number™ is smol at first?
-*** You're some kind of leader of a galactic army, conquering systems
-*** Obtain new ranks/titles as you keep conquering, maybe eventually given the option to overthrow emperor?
-*** Little blurbs at booting the game "Welcome back, Commander/Supreme Commander/Emperor"
-**** Assume naval ranks because y'know, space navy and all that
-*** procedurally generated antagonists, random names for races and populations that you have to obliterate 
-*** make it very clearly a critique of imperialism and nationalism
-*** start out with one ship, based in one planet, with a set amount of crew and population and armies at your command
-*** Start conquering other planets in the solar system and then start expanding outwards
-*** Main window comprises repopulation number, strength, armaments (literal number multipliers)
-*** Unclear which sort of time scale we're working with, but numbers gotta go up visibly
-*** Galactic Genocide is fun!
-*** Perhaps a button presses your population centers into a conscription drive, but this slows down your progress so can't be done always (maybe has a cooldown?)
-**** Might have to work based on your clock to measure elapsed time, in any case might be the only way of tracking time here in order to provide a somewhat accurate game clock
-*** Have to ensure the clock continues running even in the background, perhaps even a minimize to notif bar ability
-*** Also have to check native performance of flutter within this computer, if it doesn't run well here then what's the point wallahi
-*** The universe /is/ endless, with a good name generator the number can go up forever, essentially 
+- Space-themed game about sending millions and millions to their deaths all entirely for the purpose of unrestrained expansion
+- Space imperialism weee
+- Initial premise is tough, how do we justify what we're doing when the number™ is smol at first?
+- You're some kind of leader of a galactic army, conquering systems
+- Obtain new ranks/titles as you keep conquering, maybe eventually given the option to overthrow emperor?
+ - Little blurbs at booting the game "Welcome back, Commander/Supreme Commander/Emperor"
+- Assume naval ranks because y'know, space navy and all that
+- procedurally generated antagonists, random names for races and populations that you have to obliterate 
+- make it very clearly a critique of imperialism and nationalism
+- start out with one ship, based in one planet, with a set amount of crew and population and armies at your command
+- Start conquering other planets in the solar system and then start expanding outwards
+- Main window comprises repopulation number, strength, armaments (literal number multipliers)
+- Unclear which sort of time scale we're working with, but numbers gotta go up visibly
+- Galactic Genocide is fun!
+- Perhaps a button presses your population centers into a conscription drive, but this slows down your progress so can't be done always (maybe has a cooldown?)
+- Might have to work based on your clock to measure elapsed time, in any case might be the only way of tracking time here in order to provide a somewhat accurate game clock
+ - Have to ensure the clock continues running even in the background, perhaps even a minimize to notif bar ability
+- Also have to check native performance of flutter within this computer, if it doesn't run well here then what's the point wallahi
+- The universe /is/ endless, with a good name generator the number can go up forever, essentially 
